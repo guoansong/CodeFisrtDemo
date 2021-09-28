@@ -24,9 +24,11 @@ namespace MvcDemo.Controllers
         public IActionResult Index()
         {   
             ViewBag.IsLogin = 0;
-            var sess = HttpContext.Session.GetString("name");
-            if(sess != null)
+            var name = HttpContext.Session.GetString("name");
+            if(name != null){
+                ViewBag.UserName = name;
                 ViewBag.IsLogin = 1;
+            }
            
             return View();
         }

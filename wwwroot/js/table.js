@@ -10,7 +10,7 @@ function Mytable(){
         {header: 'YourAction'}
       ];
     return(
-        <table >
+        <table  style={tableStyle}>
         <TableHead Head={Head} />
             <tbody id="tableBody">
                     <tr>
@@ -24,7 +24,7 @@ function Mytable(){
 }
 const TableHead = (props) => {
     const myHead = props.Head.map((item, index) => {
-      return <th key={index}>{item.header}</th>
+      return <th  style={thSytle} key={index}>{item.header}</th>
     });
     return (
       <thead>
@@ -38,7 +38,7 @@ const TableHead = (props) => {
 function EditTable(){
 
   return(
-    <table >
+    <table  style={tableStyle}>
       <tbody >
           <EditTrMsg  Msg="First name"/>
           <EditTrInput  id="firstName"/>
@@ -59,7 +59,7 @@ function EditTable(){
 const EditTrMsg = (props)=>
 {
   return(
-      <tr>
+      <tr >
       <td >
           <span>{props.Msg}</span>
       </td>
@@ -69,9 +69,9 @@ const EditTrMsg = (props)=>
 const EditTrInput = (props)=>
 {
   return(
-      <tr>
+      <tr >
       <td >
-      <input type="text" id={props.id}></input>
+      <input style={inputStyle} type="text" id={props.id}></input>
       </td>
   </tr>
   );
@@ -86,4 +86,22 @@ const SubmitBtn = (props)=>
           </td>
       </tr>
   );
+}
+
+const tableStyle={
+  
+  borderCollapse: 'collapse',
+	border:'1px solid green',
+  textAlign:'left',
+  margin: 'auto'
+};
+const thSytle={
+
+  backgroundColor:'rgb(22, 139, 187)',
+	color:'white',
+};
+const inputStyle={
+  backgroundColor:'rgb(22, 139, 187)',
+	color:'white',
+  width:"400px",
 }

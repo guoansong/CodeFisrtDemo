@@ -39,8 +39,13 @@ function handleClick(e) {
         
     var val = e.target.value;
     console.log(e.target.value);
-    
-    postDataBack("/home/GetUserByName", {name:val}, (data)=>{
+    loadUserInforByName(val);
+}
+
+function loadUserInforByName(name)
+{
+
+    postDataBack("/home/GetUserByName", {name:name}, (data)=>{
         //console.log(data);
         ReactDOM.render(
             <AfterLogin user={data} />,
@@ -67,12 +72,12 @@ function AfterLogin(props) {
 
 function EditUserInfo(props) {
     return (
-        <a>
+        <label >
         <input type="hidden" id="editUserId" value={props.user.userId}></input>
-        <Msg2 msg="| Current to edit user:  "/>
+        <Msg2 msg="  | Current to edit user:  "/>
         <Msg2 msg={props.user.firstName} />
         <Msg2 msg=" . "/>
-        <Msg2 msg={props.user.lastName} /></a>
+        <Msg2 msg={props.user.lastName} /></label>
     );
 }
 
@@ -90,9 +95,9 @@ const spanStyle={
 };
 function tick() {
     const element = (
-      <a>
+      <label>
         <span style={spanStyle}>Right Now : {new Date().toString()}.</span>
-      </a>
+      </label>
     );
     ReactDOM.render(
       element,
@@ -102,9 +107,12 @@ function tick() {
 
 function renderEditUser(user)
 {
-    setInterval(tick, 1000);
     ReactDOM.render(
         <EditUserInfo  user={user}/>,
         document.getElementById('bottomInfo')
     );
+}
+function removeBottom()
+{
+    ReactDOM.unmountComponentAtNode(document.getElementById('bottomInfo'));
 }
