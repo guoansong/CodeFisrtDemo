@@ -1,0 +1,28 @@
+
+   @*@foreach (var item in Model)
+    {
+        <tr>
+          <td>
+             @Html.DisplayFor(modelItem => item.UserId)
+          </td>
+          <td>
+            @item.FirstName
+          </td>
+          <td>
+            @item.LastName
+          </td>
+          <td>
+            @item.Address
+          </td>
+          <td>
+            @item.TelePhone
+          </td>
+          <td>
+            @item.Email
+          </td>
+          <td>
+            @Html.DisplayFor(modelItem => item.UpdateDate)
+           
+          </td>    
+        </tr>
+    }*@
