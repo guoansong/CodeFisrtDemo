@@ -1,0 +1,26 @@
+﻿@model List<MvcDemo.Models.Admin>
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="text-center">
+  <div class="text-center" id="app"></div>
+</div>
+
+@section AdditionalJS{
+    <script src="~/lib/jquery/dist/jquery.tmpl.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.boxlayer.js"></script>
+    <script type="text/babel" src="~/js/table.js"></script>
+    <script type="text/babel" src="~/js/myreact.js?v"></script>
+    <script type="text/babel" language="javascript">
+      var check = @ViewBag.IsLogin;
+      
+      if(check )
+          showTable();
+      else
+          beforeLogin();
+    </script>
+
+}
+<div id="my_box" class="myboxk">
+
+</div>
