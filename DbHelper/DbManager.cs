@@ -31,10 +31,10 @@ namespace   MvcDemo.DbHelper
                 List<Admin> books = new List<Admin>()
                 {
                     new Admin() {UserId=1, FirstName = "Admin", LastName = "System",  Address= "blk 56, Center Stree 20, ShangHai, China" ,UpdateDate=DateTime.Now},
-                    new Admin() {UserId=2, FirstName = "Tom", LastName = "Song",  Address= "lk 56, Center Stree 20, ShangHai, China" ,TelePhone="15821987226", Email="guoan@qq.com", UpdateDate=DateTime.Now},
+                    new Admin() {UserId=2, FirstName = "Tom", LastName = "Song",  Address= "blk 56, Center Stree 20, ShangHai, China" ,TelePhone="15821987226", Email="guoan@qq.com", UpdateDate=DateTime.Now},
                     new Admin() {UserId=3, FirstName = "Jack", LastName = "Liu",  Address= "blk 88, Notherwind Stree 21, England" ,UpdateDate=DateTime.Now},
-                    new Admin() {UserId=4, FirstName = "Peter", LastName = "Tang",  Address= "blk 88, Notherwind Stree 21, England" ,UpdateDate=DateTime.Now},
-                    new Admin() {UserId=5, FirstName = "Alien", LastName = "long",  Address= "blk 88, Notherwind Stree 21, England" ,UpdateDate=DateTime.Now},
+                    new Admin() {UserId=4, FirstName = "Peter", LastName = "Tang",  Address= "blk 88, Notherwind Stree 21, England" ,Email="1122@qq.com",UpdateDate=DateTime.Now},
+                    new Admin() {UserId=5, FirstName = "Alien", LastName = "long",  Address= "blk 88, Notherwind Stree 21, England" ,Email="llkjk@qq.com",UpdateDate=DateTime.Now},
                     new Admin() {UserId=6, FirstName = "Micheal", LastName = "see",  Address= "blk 88, Notherwind Stree 21, England" ,UpdateDate=DateTime.Now}
                 };
 

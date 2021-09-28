@@ -91,8 +91,7 @@ function saveUpdate()
                 email:$("#email").val()
             }, 
             (data)=>{
-                document.getElementById('clock').innerHTML = null;
-                document.getElementById('bottomInfo').innerHTML = null;
+                removeBottom()
                 showTable();
             });
         }
