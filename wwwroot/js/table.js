@@ -14,7 +14,7 @@ function Mytable(){
         <TableHead Head={Head} />
             <tbody id="tableBody">
                     <tr>
-                        <td colSpan="7" id="content">
+                        <td colSpan="8" id="content">
                             Loading...
                         </td>
                     </tr>

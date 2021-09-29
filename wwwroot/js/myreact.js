@@ -20,6 +20,14 @@ function Login() {
     </div>
     );
 }
+function AddNewbutton()
+{
+    return (
+        <div>
+            <input  type="button" value="New" onClick={addNew} ></input>
+        </div>
+        );
+}
 
 function beforeLogin(){
     ReactDOM.render(
@@ -30,7 +38,10 @@ function beforeLogin(){
 function showTable()
 {
     ReactDOM.render(
-        <Mytable />,
+        <div>
+            <Mytable />
+            <AddNewbutton />
+        </div>,
         document.getElementById('app')
     );
     loadTmpl("/tmpl/data.html","/home/GetAllUser","#tableBody"); 
