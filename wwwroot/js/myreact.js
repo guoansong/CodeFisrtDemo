@@ -100,10 +100,6 @@ function renderEditPage()
     );
 }
 
-const spanStyle={
-    position:'relative',
-    left:'20px',
-};
 function tick() {
     const element = (
       <label>
@@ -127,3 +123,8 @@ function removeBottom()
 {
     ReactDOM.unmountComponentAtNode(document.getElementById('bottomInfo'));
 }
+
+const spanStyle={
+    position:'relative',
+    left:'20px',
+};
