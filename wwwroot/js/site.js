@@ -78,7 +78,6 @@ function showEditPage(id)
 function saveUpdate()
 { 
     $.alerts.confirm("Confirm Again","Are you sure to update this user?", (result)=>{
-            
         if(result)
         {
 
@@ -96,4 +95,7 @@ function saveUpdate()
             });
         }
     });
+}
+function addNew(){
+    renderEditPage();
 }

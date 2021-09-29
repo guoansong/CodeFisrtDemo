@@ -10,8 +10,8 @@
     <input type="hidden" id="hidName" value='@ViewBag.UserName'></input>
     <script src="~/lib/jquery/dist/jquery.tmpl.min.js"></script>
     <script src="~/lib/jquery/dist/jquery.boxlayer.js"></script>
-    <script type="text/babel" src="~/js/table.js"></script>
-    <script type="text/babel" src="~/js/myreact.js"></script>
+    <script type="text/babel" src="~/js/table.js" asp-append-version="true"></script>
+    <script type="text/babel" src="~/js/myreact.js" asp-append-version="true"></script>
     <script type="text/babel" language="javascript">
       var check = @ViewBag.IsLogin;
       if(check )
@@ -23,6 +23,3 @@
     </script>
 
 }
-<div id="my_box" class="myboxk">
-
-</div>
