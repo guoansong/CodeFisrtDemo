@@ -18,7 +18,7 @@ namespace   MvcDemo.DbHelper
         public static void  SetupDb(string conString)
         {
            //_conString = conString;
-            using (SqliteDb myDb = new SqliteDb(conString))
+            using (MyDbContext myDb = new MyDbContext(conString))
             {
                 myDb.Database.EnsureCreated();
                 var dirtyData = myDb.Admin.ToArray();
@@ -44,7 +44,7 @@ namespace   MvcDemo.DbHelper
         }
         public  List<Admin> GetAllUser ()
         {
-            using (SqliteDb myDb = new SqliteDb(_conString))
+            using (MyDbContext myDb = new MyDbContext(_conString))
             {
                 return myDb.Admin.ToList();
             }
@@ -52,7 +52,7 @@ namespace   MvcDemo.DbHelper
         }
         public  Admin GetUserById (int id)
         {
-            using (SqliteDb myDb = new SqliteDb(_conString))
+            using (MyDbContext myDb = new MyDbContext(_conString))
             {
                 return myDb.Admin.Where(c=>c.UserId == id).SingleOrDefault();
             }
@@ -60,7 +60,7 @@ namespace   MvcDemo.DbHelper
         }
         public  Admin GetUserByName (string name)
         {
-            using (SqliteDb myDb = new SqliteDb(_conString))
+            using (MyDbContext myDb = new MyDbContext(_conString))
             {
                 return myDb.Admin.Where(c=>c.FirstName == name).SingleOrDefault();
             }
@@ -68,7 +68,7 @@ namespace   MvcDemo.DbHelper
         }
         public  int RemoveUserById (int id)
         {
-            using (SqliteDb myDb = new SqliteDb(_conString))
+            using (MyDbContext myDb = new MyDbContext(_conString))
             {
                 var temp =  GetUserById (id);
                 myDb.Admin.Remove(temp);
@@ -79,7 +79,7 @@ namespace   MvcDemo.DbHelper
         }
         public  int UpdateUser (Admin user)
         {
-            using (SqliteDb myDb = new SqliteDb(_conString))
+            using (MyDbContext myDb = new MyDbContext(_conString))
             {
                 
                 myDb.Admin.Update(user);
@@ -90,7 +90,7 @@ namespace   MvcDemo.DbHelper
         }
         public  int AddNewUser (Admin user)
         {
-            using (SqliteDb myDb = new SqliteDb(_conString))
+            using (MyDbContext myDb = new MyDbContext(_conString))
             {
                 
                 myDb.Admin.Add(user);
