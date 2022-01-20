@@ -27,10 +27,11 @@ namespace MvcDemo
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            string connecttext = Configuration.GetConnectionString("Default");
+            //string connecttext = Configuration.GetConnectionString("Default");
+            string connecttext = Configuration.GetConnectionString("Mysql");
             
             services.AddSession();
-            services.AddDbContext<SqliteDb>(options => options.UseSqlite(connecttext));
+            //services.AddDbContext<SqliteDb>(options => options.UseSqlite(connecttext));
             services.AddSingleton(new DbManager(connecttext));
             //this funtion to setup database first, it will clean all dirty data.
             DbManager.SetupDb(connecttext);
